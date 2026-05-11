@@ -13,12 +13,10 @@ Calibration of a NTC thermistor using the Steinhart-Hart equation for the water 
 
 Voltage divider: 5V → R_ref → NTC → GND 
 ADC pin reads voltage between R_ref and NTC.
-
-[Calibration circuit](schematic/calibration.kicad_sch) 
-
+ 
 ## Code
 
-[Mesurement Code](src/calibration.ino)
+
 
 ## Calibration Data
 

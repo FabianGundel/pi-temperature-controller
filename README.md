@@ -24,7 +24,7 @@ This projekt is being build to better understand practical control engineering, 
 
 ## Hardware
 
-[Hardware](hardware/components.pdf)
+[Hardware](hardware/pid-temperature-controller-hardware.pdf)
 
 ---
 
