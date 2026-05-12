@@ -16,7 +16,7 @@ ADC pin reads voltage between R_ref and NTC.
  
 ## Code
 
-[Calibration Code](src/calibration/calibration.ino)
+[Calibration Code](../src/calibration/calibration.ino)
 
 ## Calibration Data
 
