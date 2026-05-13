@@ -28,6 +28,12 @@ This projekt is being build to better understand practical control engineering, 
 
 ---
 
+## Circuit
+
+[Main Circuit Diagram](docs/main.pdf)
+
+---
+
 ## System Architecture
 
 ### 1. Temperature Measurement

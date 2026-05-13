@@ -11,8 +11,7 @@ Calibration of a NTC thermistor using the Steinhart-Hart equation for the water 
 
 ## Circuit
 
-Voltage divider: 5V → R_ref → NTC → GND 
-ADC pin reads voltage between R_ref and NTC.
+[Calibration Circuit Diagram](../docs/calibration.pdf)
  
 ## Code
 
