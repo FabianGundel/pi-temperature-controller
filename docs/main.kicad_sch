@@ -7,7 +7,7 @@
 	(title_block
 		(title "pid-temperature-controller|main")
 		(date "2026-05-13")
-		(rev "v1.0")
+		(rev "v1.1")
 	)
 	(lib_symbols
 		(symbol "Device:Heater"
@@ -2626,7 +2626,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "de0e3f6d-60a2-42c8-936b-6c64068149d5")
-		(property "Reference" "R3"
+		(property "Reference" "R2"
 			(at 104.14 67.31 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2688,7 +2688,7 @@
 		(instances
 			(project "main"
 				(path "/65a569c9-b81d-4fcf-906a-443098e8f4b2"
-					(reference "R3")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -2788,7 +2788,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f560831a-fc50-4e7f-bb00-912ef63d49e6")
-		(property "Reference" "R4"
+		(property "Reference" "R3"
 			(at 95.25 76.1999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2852,7 +2852,7 @@
 		(instances
 			(project "main"
 				(path "/65a569c9-b81d-4fcf-906a-443098e8f4b2"
-					(reference "R4")
+					(reference "R3")
 					(unit 1)
 				)
 			)
