@@ -9,7 +9,7 @@ This project is a self-developed **PID-based temperature control system** for a 
 
 The goal is precise temperature regulation of a 1L water container using a self-calibrated NTC thermistor and a PWM-controlled heating element.
 
-This projekt is being build to better understand practical control engineering, temperature measurement, PWM power control and sensor calibration. Instead of using a ready-made thermostat module, the entire control loop is being implemented using an Arduino UNO, a MOSFET-driven heating element and a self-calibrated NTC thermistor.
+This project is being build to better understand practical control engineering, temperature measurement, PWM power control and sensor calibration. Instead of using a ready-made thermostat module, the entire control loop is being implemented using an Arduino UNO, a MOSFET-driven heating element and a self-calibrated NTC thermistor.
 
 ---
 
@@ -58,17 +58,6 @@ This projekt is being build to better understand practical control engineering, 
 
 ---
 
-## System Characteristics
-
-- Closed-loop feedback architecture
-- Self-calibrated temperature sensor
-- Power-efficient MOSFET switching stage
-- Embedded real-time control
-- Practical implementation of control engineering principles
-- Consideration of thermal system dynamics
-
----
-
 ## Current Status
 
 ✔ Hardware fully assembled 
@@ -80,6 +69,6 @@ This projekt is being build to better understand practical control engineering, 
 
 ---
 
-### Licence
+## License
 
 MIT

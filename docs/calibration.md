@@ -42,11 +42,11 @@ Calculated using the [Thermistor Calculator by Stanford Research Systems Inc](ht
 
 ## Formula
 
-$$\frac{1}{T} = A + B \cdot \ln(R) + C \cdot \ln(R)^3$$
+1/T = A + B·ln(R) + C·ln(R)³
 
 ## Results
 
 - Max. deviation: ±0.5°C in the range 20–90°C
-- Used ADC-Range: 254-842
+- Used ADC range: 254-842
 
 
