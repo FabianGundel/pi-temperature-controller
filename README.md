@@ -34,6 +34,12 @@ This project is being build to better understand practical control engineering, 
 
 ---
 
+## Code
+
+[PID-Temperature-Regulation Code](src/main/main.ino)
+
+---
+
 ## System Architecture
 
 ### 1. Temperature Measurement
