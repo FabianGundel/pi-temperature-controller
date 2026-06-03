@@ -3,12 +3,12 @@
 
 
 //pid parameter
-double Kp = 0.0;//insert Kp;
+double Kp = 40.0;//insert Kp;
 double Ki = 0.0;//insert Ki;
 double Kd = 0.0;//insert Kd;
 
 //temperature
-double setpoint = 50.0; // °C (<= 90°C !!!)
+double setpoint = 40.0; // °C (<= 90°C !!!)
 const int NUM_READS = 5;
 const double TEMP_MAX = 95.0; // °C
 
@@ -39,15 +39,16 @@ double output = 0.0;
 
 unsigned long previousTime = 0;
 
+
 //setup
 
 void setup() {
 
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   pinMode(PIN_MOSFET, OUTPUT);
 
-  analogWrite(PIN_MOSFET, 0);
+  analogWrite(PIN_MOSFET, 0.0);
 
   previousTime = millis();
 
@@ -94,11 +95,12 @@ void loop() {
   //pwm output
   output = constrain(rawOutput, 0, 255);
 
-  analogWrite(PIN_MOSFET, (int)output);
+  analogWrite(PIN_MOSFET, output);
 
   //serial output
   if (abs(temperature - lastPrintedTemp) > 0.1) {
 
+    Serial.println(analogRead(A0));
     Serial.println("Setpoint: " + String(setpoint) + "°C");
     Serial.println("Process: " + String(temperature) + "°C");
     Serial.println("PWM: " + String(output));
@@ -130,7 +132,7 @@ double readTemperature() {
 
  
   double ntcResistance =
-    R_REF * ((V_REF / voltage) - 1.0);
+  R_REF * voltage / (V_REF - voltage);
 
  
   double lnR = log(ntcResistance);
