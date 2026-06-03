@@ -7,9 +7,164 @@
 	(title_block
 		(title "pid-temperature-controller|main")
 		(date "2026-05-13")
-		(rev "v1.1")
+		(rev "v1.2")
 	)
 	(lib_symbols
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:Heater"
 			(pin_numbers
 				(hide yes)
@@ -1850,7 +2005,7 @@
 		(at 156.21 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "53360219-0e50-4dea-8341-e993e0609ddf")
+		(uuid "761fd082-34c1-42b6-a956-d4f44345aebc")
 	)
 	(junction
 		(at 83.82 109.22)
@@ -1876,16 +2031,6 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 81.28) (xy 156.21 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "147f097c-95ec-4713-9d89-5709a2e61831")
-	)
-	(wire
-		(pts
 			(xy 83.82 49.53) (xy 83.82 68.58)
 		)
 		(stroke
@@ -1893,6 +2038,16 @@
 			(type default)
 		)
 		(uuid "19292735-87ee-4e97-b1f0-d7d3624b015a")
+	)
+	(wire
+		(pts
+			(xy 133.35 81.28) (xy 134.62 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1cd6b52d-a4cb-4863-af63-9432635c7e1f")
 	)
 	(wire
 		(pts
@@ -1936,6 +2091,16 @@
 	)
 	(wire
 		(pts
+			(xy 142.24 81.28) (xy 156.21 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62e378fc-dca4-47dc-b90d-2357fe7cb745")
+	)
+	(wire
+		(pts
 			(xy 156.21 73.66) (xy 156.21 81.28)
 		)
 		(stroke
@@ -1963,16 +2128,6 @@
 			(type default)
 		)
 		(uuid "a2658b57-5b15-414f-b027-71241fc8c674")
-	)
-	(wire
-		(pts
-			(xy 156.21 81.28) (xy 156.21 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a33033f2-74a2-4456-95eb-790abe872cc0")
 	)
 	(wire
 		(pts
@@ -2033,6 +2188,16 @@
 			(type default)
 		)
 		(uuid "d0c70c8f-39c8-4e31-83c8-d60b00317b98")
+	)
+	(wire
+		(pts
+			(xy 156.21 81.28) (xy 156.21 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0555693-9054-4d41-ade5-4d8f33c08f44")
 	)
 	(symbol
 		(lib_id "power:+12V")
@@ -2281,6 +2446,88 @@
 			(project "main"
 				(path "/65a569c9-b81d-4fcf-906a-443098e8f4b2"
 					(reference "A1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 138.43 81.28 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "43df5113-6b35-4d14-be4f-55bcce7a3dc4")
+		(property "Reference" "C1"
+			(at 137.1599 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 139.6999 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 80.3148 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 138.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 138.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "afede105-2ed3-490a-bf1d-0876aba5e864")
+		)
+		(pin "1"
+			(uuid "5eeaffc8-adbb-44b2-a78d-8ff8730a840e")
+		)
+		(instances
+			(project "main"
+				(path "/65a569c9-b81d-4fcf-906a-443098e8f4b2"
+					(reference "C1")
 					(unit 1)
 				)
 			)
