@@ -32,6 +32,9 @@ This project is being build to better understand practical control engineering, 
 
 [Main Circuit Diagram](docs/main.pdf)
 
+> A 100nF decoupling capacitor was added between A0 and GND
+> to filter high-frequency noise on the ADC input.
+
 ---
 
 ## Code
