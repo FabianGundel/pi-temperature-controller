@@ -34,11 +34,11 @@ Calculated using the [Thermistor Calculator by Stanford Research Systems Inc](ht
 > **Note:** If the link is unavailable, coefficients can be recalculated using any
 > Steinhart-Hart solver using the calibration data.
 
-| Coefficient | Value        |
-|-------------|--------------|
-| A           | +7.927e-4    |
-| B           | +3.015e-4    |
-| C           | -2.659e-7    |
+| Coefficient | Value           |
+|-------------|-----------------|
+| A           | 0.7215939276e-3 |
+| B           | 3.161853033e-4  |
+| C           | -3.580517355e-7 |
 
 ## Formula
 
