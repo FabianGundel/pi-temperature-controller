@@ -3,8 +3,8 @@
 
 
 //pid parameter
-double Kp = 140.0;//insert Kp;
-double Ki = 0.0;//insert Ki;
+double Kp = 600.0;//insert Kp;
+double Ki = 0.2;//insert Ki;
 double Kd = 0.0;//insert Kd;
 
 //temperature
