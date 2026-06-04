@@ -3,7 +3,7 @@
 
 
 //pid parameter
-double Kp = 40.0;//insert Kp;
+double Kp = 100.0;//insert Kp;
 double Ki = 0.0;//insert Ki;
 double Kd = 0.0;//insert Kd;
 
@@ -13,9 +13,9 @@ const int NUM_READS = 5;
 const double TEMP_MAX = 95.0; // °C
 
 //steinhart-hart
-const double A = 0.0007927;
-const double B = 0.0003015;
-const double C = -0.0000002659;
+const double A = 0.0007215939276;
+const double B = 0.0003161853033;
+const double C = -0.0000003580517355;
 
 //hardware
 const int PIN_NTC = A0;
@@ -62,7 +62,7 @@ void loop() {
   unsigned long currentTime = millis();
   double dt = (currentTime - previousTime) / 1000.0;
 
-  if (dt <= 0.0) return;
+  if (dt <= 1.0) return;
 
   previousTime = currentTime;
 
@@ -98,17 +98,17 @@ void loop() {
   analogWrite(PIN_MOSFET, output);
 
   //serial output
-  if (abs(temperature - lastPrintedTemp) > 0.1) {
+  //if (abs(temperature - lastPrintedTemp) > 0.01) {
 
-    Serial.println(analogRead(A0));
+    Serial.println("ADC: " + String(analogRead(A0)));
     Serial.println("Setpoint: " + String(setpoint) + "°C");
     Serial.println("Process: " + String(temperature) + "°C");
     Serial.println("PWM: " + String(output));
     Serial.println("Error: " + String(errorPid));
     Serial.println("---------------------------------------");
 
-    lastPrintedTemp = temperature;
-  }
+   // lastPrintedTemp = temperature;
+  //}
   
   
 }
