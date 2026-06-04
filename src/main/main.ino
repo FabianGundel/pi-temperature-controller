@@ -3,7 +3,7 @@
 
 
 //pid parameter
-double Kp = 100.0;//insert Kp;
+double Kp = 140.0;//insert Kp;
 double Ki = 0.0;//insert Ki;
 double Kd = 0.0;//insert Kd;
 
