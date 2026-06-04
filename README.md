@@ -73,8 +73,29 @@ This project is being build to better understand practical control engineering, 
 ✔ MOSFET successfully tested 
 ✔ NTC sensor calibrated 
 ✔ Temperature measurement functional 
-- Control algorithm implementation ongoing 
+✔ Control algorithm implementation ongoing 
 - PID parameter tuning ongoing 
+
+---
+
+## Tools
+
+> These tools were built with AI assistance and are provided
+> as-is for development use. The core PID implementation
+> in src/ was developed and understood independently.
+
+The PID tuning process requires observing temperature curves over
+several minutes. The Arduino Serial Plotter resets its time axis
+on each reconnect and offers no export functionality.
+
+- [Server](tools/host/localhost-pid-data.py): lightweight local server that receives and stores
+  incoming temperature data
+  
+- [Uploader](tools/upload/serial-to-localhost.py): reads Serial output from the Arduino and forwards
+  it to the server
+  
+- [Visualizer](tools/plotter/plotter.py): plots the live temperature curve with a
+  time axis for better readability on slow thermal systems 
 
 ---
 
