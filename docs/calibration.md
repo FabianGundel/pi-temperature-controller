@@ -21,9 +21,9 @@ Calibration of a NTC thermistor using the Steinhart-Hart equation for the water 
 
 | T (°C) | avg ADC Raw | R_NTC (Ω) |
 |--------|-------------|-----------|
-| 29.6   | 762.0       | 7794      |
-| 61.8   | 456.8       | 2146      |
-| 85.5   | 280.0       | 1002      |
+| 25.0   | 808.1       | 10000     |
+| 61.8   | 456.8       |  2146     |
+| 85.5   | 280.0       |  1002     |
 
 ## Steinhart-Hart Coefficients
 
