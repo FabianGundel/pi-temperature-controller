@@ -1,11 +1,15 @@
-# PID Temperature Controller – Water Bath System
+# PI Temperature Controller – Water Bath System
 
 > This project is currently work in progress.
 > Source code and additional documentation will be uploaded progressively during development.
 
 ## Project Overview
 
-This project is a self-developed **PID-based temperature control system** for a water bath, implemented using an Arduino UNO.
+This project is a self-developed **PI-based temperature control system** for a water bath, implemented using an Arduino UNO.
+
+> First a PID-Controller was tryed to be implemented, but after some 
+> development time and research the D-Part of the controller came out to be 
+> unnecessary and was thrown out.
 
 The goal is precise temperature regulation of a 1L water container using a self-calibrated NTC thermistor and a PWM-controlled heating element.
 
@@ -16,7 +20,7 @@ This project is being build to better understand practical control engineering, 
 ## Project Objectives
 
 - Design and implementation of a closed-loop control system
-- Development of a PID control algorithm
+- Development of a PI control algorithm
 - Calibration of an NTC temperature sensor [NTC-Calibration](docs/calibration.md)
 - Implementation of PWM-based power control
 
@@ -24,7 +28,7 @@ This project is being build to better understand practical control engineering, 
 
 ## Hardware
 
-[Hardware](hardware/pid-temperature-controller-hardware.pdf)
+[Hardware](hardware/pi-temperature-controller-hardware.pdf)
 
 ---
 
@@ -37,9 +41,15 @@ This project is being build to better understand practical control engineering, 
 
 ---
 
+## PI-Controller
+
+[PI-Documentation](docss/pi.md)
+
+---
+
 ## Code
 
-[PID-Temperature-Regulation Code](src/main/main.ino)
+[PI-Temperature-Regulation Code](src/main/main.ino)
 
 ---
 
@@ -54,7 +64,7 @@ This project is being build to better understand practical control engineering, 
 - Arduino UNO microcontroller
 - Real-time temperature computation
 - Error calculation (setpoint vs. measured value)
-- PID control algorithm
+- PI control algorithm
 
 ### 3. Power Stage
 - MOSFET: IRLB8743
@@ -74,17 +84,17 @@ This project is being build to better understand practical control engineering, 
 ✔ NTC sensor calibrated 
 ✔ Temperature measurement functional 
 ✔ Control algorithm implementation ongoing 
-- PID parameter tuning ongoing 
+- PI parameter tuning ongoing 
 
 ---
 
 ## Tools
 
 > These tools were built with AI assistance and are provided
-> as-is for development use. The core PID implementation
+> as-is for development use. The core PI implementation
 > in src/ was developed and understood independently.
 
-The PID tuning process requires observing temperature curves over
+The PI tuning process requires observing temperature curves over
 several minutes. The Arduino Serial Plotter resets its time axis
 on each reconnect and offers no export functionality.
 
