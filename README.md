@@ -43,7 +43,7 @@ This project is being build to better understand practical control engineering, 
 
 ## PI-Controller
 
-[PI-Documentation](docss/pi.md)
+[PI-Documentation](docs/pi.md)
 
 ---
 
