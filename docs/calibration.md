@@ -1,6 +1,6 @@
 # NTC Thermistor Calibration
 
-Calibration of a NTC thermistor using the Steinhart-Hart equation for the water bath PID controller.
+Calibration of a NTC thermistor using the Steinhart-Hart equation for the water bath PI controller.
 
 ## Components
 
