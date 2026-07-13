@@ -3,12 +3,14 @@
 
 
 //pid parameter
-double Kp = 600.0;//insert Kp;
-double Ki = 1.0;//insert Ki;
+double Kp = 11.0;//insert Kp;
+double Ki = 0.05;//insert Ki;
 double Kd = 0.0;//insert Kd;
 
+double offset = 160.0;
+
 //temperature
-double setpoint = 40.0; // °C (<= 90°C !!!)
+double setpoint = 35.0; // °C (<= 90°C !!!)
 const int NUM_READS = 5;
 const double TEMP_MAX = 95.0; // °C
 
@@ -83,11 +85,12 @@ void loop() {
 
   double rawOutput = (Kp * errorPid) + (Ki * integral) + (Kd * derivative);
 
-  if (rawOutput > 0 && rawOutput < 255) { 
-    integral += errorPid * dt; 
-    
-    rawOutput = (Kp * errorPid) + (Ki * integral) + (Kd * derivative);
-  } //integral only for finetuning
+  if (abs(errorPid) < 0.25) { 
+    integral += errorPid * dt;
+  }
+      
+    rawOutput = offset + (Kp * errorPid) + (Ki * integral) + (Kd * derivative);
+   //integral only for finetuning
 
   
   previousError = errorPid;
