@@ -79,7 +79,7 @@ void loop() {
     } 
   }
 
-  //pid controll calculation
+  //error calc 
   errorPid = setpoint - temperature;
 
   //integral & anti-windup 
