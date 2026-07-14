@@ -3,9 +3,8 @@
 
 
 //pid parameter
-double Kp = 11.0;//insert Kp;
-double Ki = 0.05;//insert Ki;
-double Kd = 0.0;//insert Kd;
+double Kp = 11.0;
+double Ki = 0.05;
 
 double offset = 160.0;
 double integralCap = 0.25;
@@ -38,6 +37,7 @@ double previousError = 0.0;
 double integral = 0.0;
 double derivative = 0.0;
 
+double rawOutput = 0.0;
 double output = 0.0;
 
 unsigned long previousTime = 0;
@@ -82,18 +82,13 @@ void loop() {
   //pid controll calculation
   errorPid = setpoint - temperature;
 
-  derivative = (errorPid - previousError) / dt;
-
-  double rawOutput = (Kp * errorPid) + (Ki * integral) + (Kd * derivative);
-
-//integral anti-windup 
+  //integral & anti-windup 
   if (abs(errorPid) < integralCap) { 
     integral += errorPid * dt;
   }
       
-
-//pid calc
-rawOutput = offset + (Kp * errorPid) + (Ki * integral) + (Kd * derivative);
+  //pid calc
+  rawOutput = offset + (Kp * errorPid) + (Ki * integral);
   
   previousError = errorPid;
 
@@ -110,6 +105,8 @@ rawOutput = offset + (Kp * errorPid) + (Ki * integral) + (Kd * derivative);
     Serial.println("Process: " + String(temperature) + "°C");
     Serial.println("PWM: " + String(output));
     Serial.println("Error: " + String(errorPid));
+    Serial.println("Proportional: " + String(errorPid * Kp));
+    Serial.println("Integral: " + String(integral * Ki));
     Serial.println("---------------------------------------");
 
    // lastPrintedTemp = temperature;
