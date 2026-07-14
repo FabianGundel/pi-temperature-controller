@@ -3,10 +3,10 @@
 
 
 //pid parameter
-double Kp = 11.0;
-double Ki = 0.05;
+double Kp = 13.0;
+double Ki = 0.025;
 
-double offset = 160.0;
+double offset = 167.0;
 double integralCap = 0.25;
 
 //temperature
