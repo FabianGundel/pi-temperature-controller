@@ -8,7 +8,7 @@ double Ki = 0.05;//insert Ki;
 double Kd = 0.0;//insert Kd;
 
 double offset = 160.0;
-doubel integralCap = 0.25;
+double integralCap = 0.25;
 
 //temperature
 double setpoint = 35.0; // °C (<= 90°C !!!)
