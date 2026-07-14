@@ -3,16 +3,16 @@
 
 
 //pid parameter
-double Kp = 13.0;
-double Ki = 0.025;
+double Kp = 18.0;
+double Ki = 0.1;
 
-double offset = 167.0;
-double integralCap = 0.25;
+double offset = 150.0;
+double integralCap = 0.8;
 
 //temperature
 double setpoint = 35.0; // °C (<= 90°C !!!)
 const int NUM_READS = 5;
-const double TEMP_MAX = 95.0; // °C
+const double TEMP_MAX = 95.0;
 
 //steinhart-hart
 const double A = 0.0007215939276;
