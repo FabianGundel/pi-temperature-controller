@@ -8,7 +8,7 @@ os.environ.setdefault("MPLCONFIGDIR", "/tmp/matplotlib")
 import matplotlib.animation as animation
 import matplotlib.pyplot as plt
 
-SERVER_URL = "" #localhostURL + /latest
+SERVER_URL = "http://192.168.178.24:5000/latest" #localhostURL + /latest
 UPDATE_INTERVAL = 2000 #update in ms
 
 times = []
@@ -153,7 +153,9 @@ def update(frame):
         axis.set_title("Waiting for data")
         return
 
-    times[:] = [point["time"] for point in points]
+    SAMPLE_INTERVAL_MIN = 1000 / 1000 / 60  # 1000ms pro Sample in Minuten
+
+    times[:] = [point["time"] * SAMPLE_INTERVAL_MIN for point in points]
     temperatures[:] = [point["actual"] for point in points]
     setpoints[:] = [point.get("setpoint") for point in points]
 
@@ -161,7 +163,7 @@ def update(frame):
     axis.plot(times, temperatures, label="Actual")
     if any(setpoint is not None for setpoint in setpoints):
         setpoint_times = [
-            point["time"]
+            point["time"] * SAMPLE_INTERVAL_MIN
             for point in points
             if point.get("setpoint") is not None
         ]
@@ -172,7 +174,7 @@ def update(frame):
         ]
         axis.plot(setpoint_times, setpoint_values, "--", label="Setpoint")
 
-    axis.set_xlabel("Zeit / Messpunkt")
+    axis.set_xlabel("Time (min)")
     axis.set_ylabel("Temperature (C)")
     axis.legend()
     axis.grid(True)
