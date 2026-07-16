@@ -4,10 +4,10 @@
 
 //pid parameter
 double Kp = 18.0;
-double Ki = 0.1;
+double Ki = 0.01;
 
-double offset = 150.0;
-double integralCap = 0.8;
+double offset = 160.0;
+double integralCap = 0.5;
 
 //temperature
 double setpoint = 35.0; // °C (<= 90°C !!!)
