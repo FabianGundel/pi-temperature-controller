@@ -115,4 +115,4 @@ on each reconnect and offers no export functionality.
 
 ## License
 
-MIT
+MIT.
