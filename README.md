@@ -34,6 +34,7 @@ This project is being build to better understand practical control engineering, 
 ## Circuit
 
 [Main Circuit Diagram](docs/main.pdf)
+
 [Images](images/)
 
 > A 100nF decoupling capacitor was added between A0 and GND
