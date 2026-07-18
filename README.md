@@ -1,7 +1,6 @@
 # PI Temperature Controller – Water Bath System
 
-> This project is currently work in progress.
-> Source code and additional documentation will be uploaded progressively during development.
+---
 
 ## Project Overview
 
@@ -35,6 +34,7 @@ This project is being build to better understand practical control engineering, 
 ## Circuit
 
 [Main Circuit Diagram](docs/main.pdf)
+[Images](images/)
 
 > A 100nF decoupling capacitor was added between A0 and GND
 > to filter high-frequency noise on the ADC input.
@@ -42,6 +42,10 @@ This project is being build to better understand practical control engineering, 
 ---
 
 ## PI-Controller
+
+The System got calibrated on heating the water up to 35°C and holding the tempearture there consistently.
+
+[Temperature Curve Image](images/PI-Curve.png)
 
 [PI-Documentation](docs/pi.md)
 
@@ -83,8 +87,8 @@ This project is being build to better understand practical control engineering, 
 ✔ MOSFET successfully tested 
 ✔ NTC sensor calibrated 
 ✔ Temperature measurement functional 
-✔ Control algorithm implementation ongoing 
-- PI parameter tuning ongoing 
+✔ Control algorithm implemented
+✔ PI parameter tuning finished
 
 ---
 

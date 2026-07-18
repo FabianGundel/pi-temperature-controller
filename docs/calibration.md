@@ -9,13 +9,19 @@ Calibration of a NTC thermistor using the Steinhart-Hart equation for the water 
 - Arduino Uno
 - Reference thermometer
 
+---
+
 ## Circuit
 
 [Calibration Circuit Diagram](../docs/calibration.pdf)
+
+---
  
 ## Code
 
 [Calibration Code](../src/calibration/calibration.ino)
+
+---
 
 ## Calibration Data
 
@@ -24,6 +30,8 @@ Calibration of a NTC thermistor using the Steinhart-Hart equation for the water 
 | 25.0   | 808.1       | 10000     |
 | 61.8   | 456.8       |  2146     |
 | 85.5   | 280.0       |  1002     |
+
+---
 
 ## Steinhart-Hart Coefficients
 
@@ -43,6 +51,8 @@ Calculated using the [Thermistor Calculator by Stanford Research Systems Inc](ht
 ## Formula
 
 1/T = A + B·ln(R) + C·ln(R)³
+
+---
 
 ## Results
 

@@ -32,30 +32,47 @@ Becomes the dominant term once the system approaches the setpoint.
 
 ---
 
-## Anti-Windup
+## Challenges during parameter tuning
 
-During warm-up the output is saturated at PWM = 255. Without anti-windup
-the integral term accumulates during this phase and causes significant
-overshoot once the setpoint is reached.
+During the tuning process some anomalies occured that requiered the implementation of further elements into the basic PI-Controller in order to solve those problems.
 
-**Solution:** The integral only accumulates when the raw (unclamped) output
-is within the valid range:
+### Feedforward Offset
+
+At the target temperature of 35°C the system requires approximately
+150/255 PWM just to compensate for heat loss to the environment.
+A standard PI controller would need to accumulate a large integral
+term to provide this base load, causing slow response and overshoot.
+
+To solve this, a fixed feedforward offset is added directly to the
+controller output:
 
 ```cpp
-double rawOutput = (Kp * errorPid) + (Ki * integral) + (Kd * derivative);
-
-  if (rawOutput > 0 && rawOutput < 255) { 
-    integral += errorPid * dt; 
-    
-    rawOutput = (Kp * errorPid) + (Ki * integral) + (Kd * derivative);
-  } //integral only for finetuning
-
-  
-  previousError = errorPid;
-
-  //pwm output
-  output = constrain(rawOutput, 0, 255);
+rawOutput = offset + (Kp * errorPid) + (Ki * integral);
 ```
+
+This allows the PI controller to operate only around the deviation
+from the steady-state operating point, enabling much smaller Kp and
+Ki values and significantly reducing integral windup.
+
+### Anti-Windup
+
+The integral term is only active within a defined error threshold
+around the setpoint:
+
+```cpp
+if (abs(errorPid) < integralCap) {
+    integral += errorPid * dt;
+}
+```
+
+During the heating phase the proportional term and feedforward offset
+provide sufficient output to drive the temperature toward the setpoint.
+Accumulating the integral during this phase would cause significant
+overshoot once the setpoint is reached.
+
+By activating the integral only within the threshold, it starts from
+zero when the system enters the fine control region – eliminating the
+steady-state offset left by the P-term without the risk of windup.
 
 ---
 
@@ -75,24 +92,9 @@ without significant overshoot.
 
 | Parameter | Value |
 |-----------|-------|
-| Kp        | x     |
-| Ki        | x     |
-
-### Response Curve
-
-![Temperature Response](../../images/response.png)
+| Kp        | 18.0  |
+| Ki        | 0.01  |
 
 ---
 
-## ADC Noise & Decoupling Capacitor
 
-During calibration, significant jumps in ADC readings were observed
-exclusively when the heating element was active.
-
-**Root cause:** PWM switching causes rapid current transients through
-the shared GND line. This induces brief voltage spikes that corrupt
-the ADC reference, producing false temperature readings.
-
-**Solution:** A 100nF decoupling capacitor between A0 and GND forms
-an RC low-pass filter together with the NTC voltage divider, attenuating
-high-frequency switching noise while passing the slow temperature signal.

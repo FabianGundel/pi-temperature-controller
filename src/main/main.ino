@@ -1,7 +1,3 @@
-// work in progress
-//--------------------------------------------------------------
-
-
 //pid parameter
 double Kp = 18.0;
 double Ki = 0.01;
