@@ -94,21 +94,14 @@ void loop() {
   analogWrite(PIN_MOSFET, output);
 
   //serial output
-  //if (abs(temperature - lastPrintedTemp) > 0.01) {
-
-    Serial.println("ADC: " + String(analogRead(A0)));
-    Serial.println("Setpoint: " + String(setpoint) + "°C");
-    Serial.println("Process: " + String(temperature) + "°C");
-    Serial.println("PWM: " + String(output));
-    Serial.println("Error: " + String(errorPid));
-    Serial.println("Proportional: " + String(errorPid * Kp));
-    Serial.println("Integral: " + String(integral * Ki));
-    Serial.println("---------------------------------------");
-
-   // lastPrintedTemp = temperature;
-  //}
-  
-  
+  Serial.println("ADC: " + String(analogRead(A0)));
+  Serial.println("Setpoint: " + String(setpoint) + "°C");
+  Serial.println("Process: " + String(temperature) + "°C");
+  Serial.println("PWM: " + String(output));
+  Serial.println("Error: " + String(errorPid));
+  Serial.println("Proportional: " + String(errorPid * Kp));
+  Serial.println("Integral: " + String(integral * Ki));
+  Serial.println("---------------------------------------");
 }
 
 
