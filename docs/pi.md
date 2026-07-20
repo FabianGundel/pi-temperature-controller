@@ -34,7 +34,7 @@ Becomes the dominant term once the system approaches the setpoint.
 
 ## Challenges during parameter tuning
 
-During the tuning process some anomalies occured that requiered the implementation of further elements into the basic PI-Controller in order to solve those problems.
+During the tuning process, some anomalies occurred that required the implementation of further elements into the basic PI-Controller to solve those problems.
 
 ### Feedforward Offset
 
@@ -65,10 +65,10 @@ if (abs(errorPid) < integralCap) {
 }
 ```
 
-During the heating phase the proportional term and feedforward offset
+During the heating phase, the proportional term and feedforward offset
 provide sufficient output to drive the temperature toward the setpoint.
 Accumulating the integral during this phase would cause significant
-overshoot once the setpoint is reached.
+overshoots once the setpoint is reached.
 
 By activating the integral only within the threshold, it starts from
 zero when the system enters the fine control region – eliminating the
@@ -85,7 +85,7 @@ a [custom live visualizer](../../tools/plotter/plotter.py).
 
 Starting point: Kp high enough to reach setpoint, Ki = 0.
 
-Ki was increased gradually until steady-state offset was eliminated
+Ki was increased gradually until a steady-state offset was eliminated
 without significant overshoot.
 
 ### Final Parameters

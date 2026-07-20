@@ -6,13 +6,13 @@
 
 This project is a self-developed **PI-based temperature control system** for a water bath, implemented using an Arduino UNO.
 
-> First a PID-Controller was tryed to be implemented, but after some 
+> First a PID-Controller was tried to be implemented, but after some 
 > development time and research the D-Part of the controller came out to be 
 > unnecessary and was thrown out.
 
 The goal is precise temperature regulation of a 1L water container using a self-calibrated NTC thermistor and a PWM-controlled heating element.
 
-This project is being build to better understand practical control engineering, temperature measurement, PWM power control and sensor calibration. Instead of using a ready-made thermostat module, the entire control loop is being implemented using an Arduino UNO, a MOSFET-driven heating element and a self-calibrated NTC thermistor.
+This project is being built to better understand practical control engineering, temperature measurement, PWM power control and sensor calibration. Instead of using a ready-made thermostat module, the entire control loop is being implemented using an Arduino UNO, a MOSFET-driven heating element, and a self-calibrated NTC thermistor.
 
 ---
 
