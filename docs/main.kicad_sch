@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "pid-temperature-controller|main")
-		(date "2026-05-13")
-		(rev "v1.2")
+		(date "2026-09-22")
+		(rev "v1.3")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -2019,6 +2019,12 @@
 		(color 0 0 0 0)
 		(uuid "90f9afdd-6743-4615-af10-fef8374d2e7d")
 	)
+	(junction
+		(at 156.21 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bf6dc647-e67f-4d36-9b4d-7f5798f770dc")
+	)
 	(wire
 		(pts
 			(xy 156.21 55.88) (xy 156.21 66.04)
@@ -2041,7 +2047,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 81.28) (xy 134.62 81.28)
+			(xy 133.35 81.28) (xy 156.21 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2091,13 +2097,23 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 81.28) (xy 156.21 81.28)
+			(xy 172.72 81.28) (xy 172.72 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "62e378fc-dca4-47dc-b90d-2357fe7cb745")
+		(uuid "50410a9d-9a53-47fe-9f65-f737946b5734")
+	)
+	(wire
+		(pts
+			(xy 172.72 109.22) (xy 156.21 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67090831-9565-4937-aa8c-6e44b016526d")
 	)
 	(wire
 		(pts
@@ -2158,6 +2174,26 @@
 			(type default)
 		)
 		(uuid "b3be6bb8-85fa-45fd-a64a-f5773afe2f3f")
+	)
+	(wire
+		(pts
+			(xy 172.72 95.25) (xy 172.72 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf89b546-575e-4ae5-989c-b3af7d77bac8")
+	)
+	(wire
+		(pts
+			(xy 156.21 81.28) (xy 172.72 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c060fe49-3134-4303-b044-812f5e48eac5")
 	)
 	(wire
 		(pts
@@ -2446,88 +2482,6 @@
 			(project "main"
 				(path "/65a569c9-b81d-4fcf-906a-443098e8f4b2"
 					(reference "A1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 138.43 81.28 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "43df5113-6b35-4d14-be4f-55bcce7a3dc4")
-		(property "Reference" "C1"
-			(at 137.1599 77.47 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 139.6999 77.47 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 142.24 80.3148 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 138.43 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 138.43 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "afede105-2ed3-490a-bf1d-0876aba5e864")
-		)
-		(pin "1"
-			(uuid "5eeaffc8-adbb-44b2-a78d-8ff8730a840e")
-		)
-		(instances
-			(project "main"
-				(path "/65a569c9-b81d-4fcf-906a-443098e8f4b2"
-					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -2856,6 +2810,88 @@
 			(project "main"
 				(path "/65a569c9-b81d-4fcf-906a-443098e8f4b2"
 					(reference "TH1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 172.72 91.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c9967aa1-12d2-4157-b867-ee95c4af0938")
+		(property "Reference" "C1"
+			(at 176.53 90.1699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 176.53 92.7099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 173.6852 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 172.72 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "a5e0776a-9b07-47af-a088-39842a958dcb")
+		)
+		(pin "1"
+			(uuid "61b9d844-c558-4d73-ab54-a5c8a9b6ae68")
+		)
+		(instances
+			(project "main"
+				(path "/65a569c9-b81d-4fcf-906a-443098e8f4b2"
+					(reference "C1")
 					(unit 1)
 				)
 			)
